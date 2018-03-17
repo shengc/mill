@@ -35,7 +35,10 @@ pacaur -S mill
 
 ### Windows
 
-Requirement: [MSYS2](https://www.msys2.org) or [Cygwin](https://www.cygwin.com)
+Mill requires a Bourne shell (`sh`) environment to run on Windows;
+it is recommended to use [MSYS2](https://www.msys2.org).
+Mill also runs on [Cygwin](https://www.cygwin.com), [Git-Bash](https://gitforwindows.org), and
+[WSL](https://docs.microsoft.com/windows/wsl) using its interactive mode (`-i` option).
 
 To get started, download Mill and install it into your system via the following command in a bash terminal:
 
@@ -50,6 +53,10 @@ To get started, download Mill and install it into your system via the following 
   ```bash
   mkdir -p /usr/local/bin && curl -Lo /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.7/0.1.7 && chmod +x /usr/local/bin/mill && sed -i '0,/-cp "\$0"/{s/-cp "\$0"/-cp `cygpath -w "\$0"`/}; 0,/-cp "\$0"/{s/-cp "\$0"/-cp `cygpath -w "\$0"`/}' /usr/local/bin/mill
   ```
+
+* Git-Bash and WSL
+
+  See the [manual](#manual) section below.
 
 ### Manual
 
