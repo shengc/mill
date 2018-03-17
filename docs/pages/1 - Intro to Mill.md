@@ -33,13 +33,31 @@ Arch Linux has an [AUR package for mill](https://aur.archlinux.org/packages/mill
 pacaur -S mill
 ```
 
+### Windows
+
+Requirement: [MSYS2](https://www.msys2.org) or [Cygwin](https://www.cygwin.com)
+
+To get started, download Mill and install it into your system via the following command in a bash terminal:
+
+* MSYS2
+
+  ```bash
+  mkdir -p /usr/local/bin && curl -Lo /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.7/0.1.7
+  ```
+
+* Cygwin
+
+  ```bash
+  mkdir -p /usr/local/bin && curl -Lo /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.7/0.1.7 && chmod +x /usr/local/bin/mill && sed -i '0,/-cp "\$0"/{s/-cp "\$0"/-cp `cygpath -w "\$0"`/}; 0,/-cp "\$0"/{s/-cp "\$0"/-cp `cygpath -w "\$0"`/}' /usr/local/bin/mill
+  ```
+
 ### Manual
 
 To get started, download Mill and install it into your system via the following
 `curl`/`chmod` command:
 
 ```bash
-sudo curl -L -o /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.6/0.1.6 && sudo chmod +x /usr/local/bin/mill
+sudo curl -Lo /usr/local/bin/mill https://github.com/lihaoyi/mill/releases/download/0.1.7/0.1.7 && sudo chmod +x /usr/local/bin/mill
 ```
 
 ### Development Releases
